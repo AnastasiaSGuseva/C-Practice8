@@ -10,7 +10,8 @@
 int m = 4;
 int[,] matrix = new int[m, m];
 
-int x = 1;
+Console.WriteLine("С какого числа начать заполнение массива?");
+int x = Convert.ToInt32(Console.ReadLine());
 
 for (int i = 0; i < m; i++)
 {
