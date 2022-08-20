@@ -14,44 +14,16 @@ for (int j = 0; j < n; j++)
         if (i == 0 || i == j)
             array[j][i] = 1;
         else
-            array[j][i] = array[j-1][i-1] + array[j-1][i];
+            array[j][i] = array[j - 1][i - 1] + array[j - 1][i];
     }
-    Console.WriteLine(string.Join("\t", array[j]));
 }
 
+for (int j = 0; j < n; j++)
+{
+    Console.SetCursorPosition((Console.WindowWidth / 2 - (array[j].Length + (j * 4)) / 2), 0 + j * 2); //left = (Середина ширины экрана) - (длина массива + пробелы при выводе)/2
+    Console.WriteLine(string.Join("    ", array[j]));
+}
 
-
-// myArr[0] = new int[4];
-// myArr[1] = new int[6];
-// myArr[2] = new int[3];
-// myArr[3] = new int[4];
-
-// // Инициализируем ступенчатый массив
-// for (; i < 4; i++)
-// {
-//     myArr[0][i] = i;
-//     Console.Write("{0}\t",myArr[0][i]);
-// }
-
-// Console.WriteLine();
-// for (i = 0; i < 6; i++)
-// {
-//     myArr[1][i] = i;
-//     Console.Write("{0}\t", myArr[1][i]);
-// }
-
-// Console.WriteLine();
-// for (i = 0; i < 3; i++)
-// {
-//     myArr[2][i] = i;
-//     Console.Write("{0}\t", myArr[2][i]);
-// }
-
-// Console.WriteLine();
-// for (i = 0; i < 4; i++)
-// {
-//     myArr[3][i] = i;
-//     Console.Write("{0}\t", myArr[3][i]);
-// }
-
-//     Console.ReadLine();
+// Треугольник получается более или менее равнобедренным до 9 строки, дальше за счёт 3-, 4-значных чисел
+// начинает ломаться, пыталась преобразовывать массив в строку и находить её длину, но это не сильно помогло (и выдавало предупреждение).
+// Видимо, это делается как-то иначе.
